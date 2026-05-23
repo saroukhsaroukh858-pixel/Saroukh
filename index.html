@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صاروخ - Saroukh | خدمة التوصيل بالموتسيكل في بنها</title>
+  <meta name="description" content="صاروخ - أسرع من الصاروخ وأرخص من المخصوص! خدمة توصيل بالموتسيكل داخل مدينة بنها. وصّلك لأي مكان في دقائق. آمن، سريع، بأسعار مناسبة." />
+  <meta name="keywords" content="صاروخ, saroukh, توصيل, موتسيكل, بنها, ركوب, نقل" />
+  <meta property="og:title" content="صاروخ - Saroukh | خدمة التوصيل بالموتسيكل في بنها" />
+  <meta property="og:description" content="أسرع من الصاروخ… وأرخص من المخصوص! 🏍️" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="favicon.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🚀</div>
+      <div class="logo-text">
+        <span class="logo-ar">صاروخ</span>
+        <span class="logo-en">SAROUKH</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">الخدمات</a></li>
+      <li><a href="#how-it-works">كيف يعمل</a></li>
+      <li><a href="#why-us">مميزاتنا</a></li>
+      <li><a href="https://wa.me/201233346179?text=عايز أنضم كسائق في لحظه" target="_blank" rel="noopener">انضم كسائق</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button onclick="openRideModal()" class="btn btn-primary" id="nav-cta-btn">📱 اطلب الآن</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="#services" class="mobile-link">الخدمات</a>
+  <a href="#how-it-works" class="mobile-link">كيف يعمل</a>
+  <a href="#why-us" class="mobile-link">مميزاتنا</a>
+  <a href="https://wa.me/201233346179?text=عايز أنضم كسائق في لحظه" class="mobile-link" target="_blank" rel="noopener">انضم كسائق</a>
+  <a href="#contact" class="mobile-link">تواصل معنا</a>
+  <button onclick="openRideModal()" class="btn btn-primary" style="margin-top:16px">📱 اطلب الآن</button>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          متاح الآن في بنها
+        </div>
+        <h1 class="hero-title">
+          صاروخ<br/>
+          <span class="line2">للتوصيل! 🚀</span>
+        </h1>
+        <p class="hero-desc">
+          أسرع من الصاروخ… وأرخص من المخصوص! 🏍️<br/>
+          خدمة توصيل بالموتسيكل داخل مدينة بنها. في دقائق معدودة نوصّلك لأي مكان بأمان وراحة تامة.
+        </p>
+        <div class="hero-btns">
+          <button onclick="openRideModal()" class="btn btn-primary" id="hero-order-btn">🏍️ اطلب رحلتك الآن</button>
+          <a href="https://wa.me/201233346179?text=عايز أنضم كسائق في لحظه" class="btn btn-outline" id="hero-driver-btn" target="_blank" rel="noopener">🫋 انضم كسائق</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" id="dynamic-rides-count">0</div>
+            <div class="hero-stat-lbl">رحلة منجزة</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="98">0</div>
+            <div class="hero-stat-lbl">% رضا العملاء</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap fade-right">
+        <img src="images/hero-bike.png" alt="لحظه - توصيل بالموتسيكل في بنها" class="hero-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═══ -->
+<div id="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-num" data-count="5">0</div>
+        <div class="stat-lbl">دقائق متوسط الانتظار</div>
+      </div>
+
+      <div class="stat-item fade-up" style="transition-delay:0.2s">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-num">4.9</div>
+        <div class="stat-lbl">تقييم الخدمة</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.3s">
+        <div class="stat-icon">📍</div>
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-lbl">% تغطية بنها</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label">🛵 خدماتنا</div>
+      <h2 class="section-title">كل ما تحتاجه <span class="highlight">في مكان واحد</span></h2>
+      <p class="section-subtitle">نقدّم مجموعة متكاملة من خدمات التوصيل داخل بنها لتلبية كل احتياجاتك</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up" id="service-ride">
+        <div class="service-icon">🏍️</div>
+        <h3 class="service-title">توصيل أشخاص</h3>
+        <p class="service-desc">وصّلناك من أي مكان لأي مكان داخل بنها بأمان وسرعة. سائقينا محترفين ومعتمدين.</p>
+        <span class="service-tag">⚡ خلال دقائق</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how-it-works" class="section">
+  <div class="container">
+    <div class="how-inner">
+      <div>
+        <div class="section-label">📋 كيف يعمل</div>
+        <h2 class="section-title">اطلب رحلتك <span class="highlight">في 3 خطوات</span></h2>
+        <div class="steps-list">
+          <div class="step active fade-up" id="step-1">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3 class="step-title">📞 اتصل أو واتساب</h3>
+              <p class="step-desc">تواصل معنا عبر الهاتف أو واتساب وأخبرنا بموقعك الحالي ووجهتك.</p>
+            </div>
+          </div>
+          <div class="step fade-up" id="step-2" style="transition-delay:0.1s">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3 class="step-title">🏍️ سائقك في الطريق</h3>
+              <p class="step-desc">بنبعت لك أقرب سائق متاح ويوصلك خلال دقائق معدودة.</p>
+            </div>
+          </div>
+          <div class="step fade-up" id="step-3" style="transition-delay:0.2s">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3 class="step-title">📍 وصلت بأمان!</h3>
+              <p class="step-desc">توصّل لوجهتك بأمان وادفع بسهولة. الأسعار واضحة من البداية.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-image fade-left">
+        <img src="images/app-mockup.png" alt="تطبيق لحظه - طلب رحلة" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY LAHZA ═══ -->
+<section id="why-us" class="section">
+  <div class="container">
+    <div class="why-header">
+      <div class="section-label">✨ مميزاتنا</div>
+      <h2 class="section-title">ليه تختار <span class="highlight">لحظه؟</span></h2>
+      <p class="section-subtitle">بنتميز بمجموعة من المميزات اللي بتخلي تجربتك معنا استثنائية</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up" id="feature-fast">
+        <div class="feature-icon-wrap">⚡</div>
+        <div>
+          <h3 class="feature-title">سرعة الاستجابة</h3>
+          <p class="feature-desc">سائقك بيوصلك خلال 5 دقائق في المتوسط. مفيش انتظار طويل.</p>
+        </div>
+      </div>
+      <div class="feature-card fade-up" id="feature-safe" style="transition-delay:0.1s">
+        <div class="feature-icon-wrap">🛡️</div>
+        <div>
+          <h3 class="feature-title">الأمان أولاً</h3>
+          <p class="feature-desc">كل سائقينا معتمدين وعندهم خوذات أمان ومتدربين على القيادة الآمنة.</p>
+        </div>
+      </div>
+      <div class="feature-card fade-up" id="feature-price" style="transition-delay:0.15s">
+        <div class="feature-icon-wrap">💰</div>
+        <div>
+          <h3 class="feature-title">أسعار مناسبة</h3>
+          <p class="feature-desc">أسعار معقولة وواضحة من البداية. مفيش مفاجآت في السعر.</p>
+        </div>
+      </div>
+      <div class="feature-card fade-up" id="feature-coverage" style="transition-delay:0.2s">
+        <div class="feature-icon-wrap">📍</div>
+        <div>
+          <h3 class="feature-title">تغطية كاملة</h3>
+          <p class="feature-desc">بنغطي كل أحياء ومناطق مدينة بنها بدون استثناء.</p>
+        </div>
+      </div>
+      <div class="feature-card fade-up" id="feature-support" style="transition-delay:0.25s">
+        <div class="feature-icon-wrap">🎧</div>
+        <div>
+          <h3 class="feature-title">دعم على مدار الساعة</h3>
+          <p class="feature-desc">فريق الدعم متاح طول اليوم لحل أي مشكلة أو الإجابة على أي سؤال.</p>
+        </div>
+      </div>
+      <div class="feature-card fade-up" id="feature-rated" style="transition-delay:0.3s">
+        <div class="feature-icon-wrap">⭐</div>
+        <div>
+          <h3 class="feature-title">تقييم عالي</h3>
+          <p class="feature-desc">4.9 نجوم من آلاف العملاء في بنها. رضاك هو هدفنا الأول.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COVERAGE ═══ -->
+<section id="coverage" class="section">
+  <div class="container">
+    <div class="coverage-inner">
+      <div class="section-label">📍 نطاق الخدمة</div>
+      <h2 class="section-title">بنغطي <span class="highlight">كل بنها</span></h2>
+      <p class="section-subtitle">خدمتنا متاحة في جميع أحياء ومناطق مدينة بنها</p>
+      <div class="coverage-map fade-up" id="coverage-map">
+        <div class="map-city">🏙️</div>
+        <div class="map-name">بنها، القليوبية</div>
+        <div class="map-sub">Benha, Qalyubia Governorate, Egypt</div>
+        <div class="zones-list">
+          <span class="zone-tag">الأهرام</span>
+          <span class="zone-tag">الفلل</span>
+          <span class="zone-tag">الشديه</span>
+          <span class="zone-tag">الرمله</span>
+          <span class="zone-tag">عزبة السوق</span>
+          <span class="zone-tag">عزبة الحرس</span>
+          <span class="zone-tag">عزبة البرنس</span>
+          <span class="zone-tag">اتريب</span>
+          <span class="zone-tag">وسط البلد</span>
+          <span class="zone-tag">المساكن</span>
+        </div>
+      </div>
+      <p class="coverage-note">🔄 نعمل على توسيع نطاق الخدمة باستمرار</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JOIN AS DRIVER ═══ -->
+<section id="join-driver" class="section">
+  <div class="container">
+    <div class="driver-inner">
+      <div class="fade-left">
+        <img src="images/driver.png" alt="انضم كسائق في لحظه" class="driver-img" />
+      </div>
+      <div class="fade-right">
+        <div class="section-label">🪪 انضم للفريق</div>
+        <h2 class="section-title">اشتغل معنا <span class="highlight">واكسب أكثر</span></h2>
+        <p class="section-subtitle">انضم لفريق صاروخ كسائق واستمتع بدخل يومي ثابت وساعات عمل مرنة</p>
+        <div class="driver-perks">
+          <div class="perk">
+            <div class="perk-icon">💵</div>
+            <span class="perk-text">دخل يومي مجزٍ ومضمون</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">🕐</div>
+            <span class="perk-text">ساعات عمل مرنة على حسب وقتك</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">🛡️</div>
+            <span class="perk-text">تأمين وحماية لك ولموتسيكلك</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">📱</div>
+            <span class="perk-text">دعم فني وتدريب مستمر</span>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">🏆</div>
+            <span class="perk-text">مكافآت وبونص للسائقين المميزين</span>
+          </div>
+        </div>
+        <a href="https://wa.me/201233346179?text=عايز أنضم كسائق في لحظه" class="btn btn-gold" id="driver-register-btn" target="_blank" rel="noopener">
+          📲 سجّل الآن مجاناً
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APP SECTION ═══ -->
+<section id="app-section" class="section">
+  <div class="container">
+    <div class="app-inner">
+      <div class="section-label" style="margin:0 auto 20px">📱 التطبيق</div>
+      <h2 class="section-title">تطبيق <span class="highlight">صاروخ</span> قريباً!</h2>
+      <p class="section-subtitle" style="margin:0 auto">بنشتغل على تطبيق صاروخ عشان تطلب رحلتك بضغطة زرار. في الانتظار، تواصل معنا مباشرة.</p>
+      <img src="images/app-mockup.png" alt="تطبيق لحظه - قريباً" class="app-img fade-up" />
+      <div class="store-btns">
+        <a href="#" class="store-btn" id="appstore-btn">
+          <div class="store-icon">🍎</div>
+          <div class="store-info">
+            <span class="store-sub">قريباً على</span>
+            <span class="store-name">App Store</span>
+          </div>
+        </a>
+        <a href="#" class="store-btn" id="googleplay-btn">
+          <div class="store-icon">▶️</div>
+          <div class="store-info">
+            <span class="store-sub">قريباً على</span>
+            <span class="store-name">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RIDE MODAL ═══ -->
+<div id="ride-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:16px;">
+  <div id="ride-modal-backdrop" onclick="closeRideModal()" style="position:absolute;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);"></div>
+  <div style="position:relative;z-index:1;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:36px 32px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:0 0 80px rgba(255,107,0,0.15);animation:modalIn 0.3s ease;">
+    <button onclick="closeRideModal()" style="position:absolute;top:16px;left:16px;background:rgba(255,255,255,0.08);border:none;color:var(--text);font-size:18px;width:36px;height:36px;border-radius:50%;cursor:pointer;line-height:1;">✕</button>
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:40px;margin-bottom:8px;">🏍️</div>
+      <h2 style="font-size:22px;font-weight:900;margin-bottom:6px;">سجّل طلبك <span style="color:var(--primary)">الآن</span></h2>
+      <p style="color:var(--text2);font-size:14px;">ادخل بياناتك وهنتواصل معاك فوراً</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+      <input type="text" id="rf-name" placeholder="اسمك" class="modal-input"/>
+      <input type="tel" id="rf-phone" placeholder="رقم تليفونك" class="modal-input"/>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+      <input type="text" id="rf-from" placeholder="من (موقعك الحالي)" class="modal-input"/>
+      <input type="text" id="rf-to" placeholder="إلى (وجهتك)" class="modal-input"/>
+    </div>
+    <select id="rf-type" class="modal-input" style="margin-bottom:12px;">
+      <option value="توصيل أشخاص">🏍️ توصيل أشخاص</option>
+    </select>
+    <input type="text" id="rf-notes" placeholder="ملاحظات (اختياري)" class="modal-input" style="margin-bottom:20px;"/>
+    <button onclick="submitRideRequest()" id="rf-submit" style="width:100%;background:var(--primary);color:#fff;border:none;border-radius:12px;padding:15px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;letter-spacing:0.5px;">🏍️ أرسل طلب الرحلة</button>
+    <div id="rf-success" style="display:none;margin-top:14px;background:rgba(34,197,94,0.1);border:1px solid #22c55e;border-radius:10px;padding:14px;text-align:center;color:#22c55e;font-weight:700;">✅ تم إرسال طلبك! هنتواصل معاك في أسرع وقت</div>
+    <div id="rf-error" style="display:none;margin-top:14px;background:rgba(239,68,68,0.1);border:1px solid #ef4444;border-radius:10px;padding:14px;text-align:center;color:#ef4444;font-weight:700;">❌ من فضلك ادخل كل البيانات المطلوبة</div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label" style="margin:0 auto 20px">📞 تواصل معنا</div>
+      <h2 class="section-title">نحن هنا <span class="highlight">لخدمتك</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">تواصل معنا في أي وقت عبر أي من قنوات التواصل التالية</p>
+      <div class="contact-cards">
+        <a href="tel:+201233346179" class="contact-card" id="contact-phone">
+          <div class="contact-icon">📞</div>
+          <div class="contact-label">اتصل بنا</div>
+          <div class="contact-value">01233346179</div>
+        </a>
+        <a href="https://wa.me/201233346179" class="contact-card" id="contact-whatsapp" target="_blank" rel="noopener">
+          <div class="contact-icon">💬</div>
+          <div class="contact-label">واتساب</div>
+          <div class="contact-value">01233346179</div>
+        </a>
+        <a href="https://facebook.com" class="contact-card" id="contact-facebook" target="_blank" rel="noopener">
+          <div class="contact-icon">👥</div>
+          <div class="contact-label">فيسبوك</div>
+          <div class="contact-value">لحظه - Lahza</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-about">
+        <a href="#" class="logo footer-logo">
+          <div class="logo-icon">🚀</div>
+          <div class="logo-text">
+            <span class="logo-ar">صاروخ</span>
+            <span class="logo-en">SAROUKH</span>
+          </div>
+        </a>
+        <p class="footer-desc">أسرع من الصاروخ… وأرخص من المخصوص! 🏍️ خدمة توصيل بالموتسيكل في بنها بأمان وأسعار مناسبة.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" id="footer-fb" aria-label="فيسبوك">f</a>
+          <a href="#" class="social-link" id="footer-ig" aria-label="انستجرام">📷</a>
+          <a href="#" class="social-link" id="footer-wa" aria-label="واتساب">💬</a>
+          <a href="#" class="social-link" id="footer-tk" aria-label="تيكتوك">♪</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#how-it-works">كيف يعمل</a></li>
+          <li><a href="#why-us">مميزاتنا</a></li>
+          <li><a href="#coverage">نطاق الخدمة</a></li>
+          <li><a href="#join-driver">انضم كسائق</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">الخدمات</h4>
+        <ul class="footer-links">
+          <li><a href="#services">توصيل أشخاص</a></li>
+          <li><a href="#services">توصيل طلبات</a></li>
+          <li><a href="#services">تسوق وتوصيل</a></li>
+          <li><a href="#app-section">التطبيق</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span class="footer-brand">صاروخ - Saroukh</span>. جميع الحقوق محفوظة. بنها، مصر.</p>
+      <p class="footer-copy">صُنع بـ ❤️ في بنها</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FIREBASE ── -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+  firebase.initializeApp({
+    databaseURL: "https://saroukh-66bbe-default-rtdb.firebaseio.com/"
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
